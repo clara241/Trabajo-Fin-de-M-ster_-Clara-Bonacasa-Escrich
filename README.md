@@ -1,1 +1,2 @@
 # TFM_Clara_Bonacasa_Escrich
+Here, you will find the scripts developped and used for my Master's Degree project in Bioinformatics and Computational Biology. Once a script was created for a specific type of analysis, the script was reused for the following analyses and therefore, only a template of the code will be uploaded here, indicating the variables that were changed for each study and the fields that need to be changed in order to read the file of ihnterest.
