@@ -1,0 +1,122 @@
+#######################
+## Bulk-RNA analysis ##
+#######################
+
+## 0) Load all the required libraries
+library(tidyverse)
+library(openxlsx)
+library(EnhancedVolcano)
+library(readxl)
+library("FactoMineR")
+library("factoextra")
+library(cowplot)
+
+counts <- read.csv("./Count_matrix_normalized.tabular", sep = "\t")
+de_genes <- read.csv("./DE_table_bulk_RNA.txt", sep = "\t")
+
+dataframe <- left_join(counts, de_genes[,c(1,3:8)], by = "Gene.stable.ID")
+write.xlsx(dataframe, file = "./counts_normalized+DEG.xlsx")
+#########
+## PCA ##
+#########
+
+# Read normalized counts obtained from the salmon quantification in Galaxy
+table_df <- read.csv("./Count_matrix_normalized.tabular", sep = "\t")
+
+# We check there are no duplicated genes
+table(duplicated(table_df$Gene.stable.ID))
+
+# Extract the Zq values from the tibble in a dataframe.
+Proteom_df <- as.data.frame(table_df[3:9])
+
+# Name the rows of the dataframe with the names of the proteins.
+rownames(Proteom_df) <- table_df$Gene.stable.ID
+
+# Dealing with missing data
+table(is.na(Proteom_df))
+# FALSE 
+# 91770  
+
+# Transpose normalized count table to perform PCA
+Proteom_df_t <- t(Proteom_df)
+
+##  We add a column specifying the groups to which each sample belongs
+Proteom_matrix_groups <- factor(c(paste(rep("HFD",3)),paste(rep("ND",4))))
+Proteom_df_t <- cbind.data.frame(Proteom_df_t,"Groups"=Proteom_matrix_groups)
+
+# Before doing the PCA, the variable "Groups" must be removed. We do it not selecting it in the PCA analysis
+res.pca <- PCA(X = Proteom_df_t[,-13111],scale.unit = T, graph = F)
+ggpubr::ggpar(fviz_pca_ind(X = res.pca,habillage = Proteom_df_t$Groups, palette = c("slateblue","firebrick"),pointsize=4,pointshape=,
+                           addEllipses = ,legend.title="Condition",ellipse.type=,mean.point=F,repel = T,
+                           geom.ind = c("point","text"), title = "Principal Component Analysis", subtitle = "HFD vs ND Bulk RNA seq",
+                           xlab = "PC1", ylab = "PC2", ggtheme = theme_cowplot()))
+
+ggsave("./results/PCA.png", width = 10, height = 8, units = "in", dpi = 600)
+
+##################
+## Volcano plot ##
+##################
+
+# Read DEGs from data obtain with limma in Galaxy
+DEGs <- read.table("./DE_table_bulk_RNA.txt", sep = "\t")
+
+# Selecting the first row to be the columns name
+colnames(DEGs) <- DEGs[1,]
+DEGs <- DEGs[-1,]
+
+# We convert our columns of p-values and fold change into numeric so the EnhancedVolcano
+# command is able to plot the DEGs in a volcano plot
+DEGs$logFC <- as.numeric(DEGs$logFC)
+DEGs$adj.P.Val <- as.numeric(DEGs$adj.P.Val)
+
+# We choose which genes are going to be coloured according to set thresholds in p-value
+# and fold change.
+keyvals <- ifelse(
+  DEGs$logFC < -1 & DEGs$adj.P.Val < 0.05, "navy",
+  ifelse(DEGs$logFC  > 1 & DEGs$adj.P.Val < 0.05,"#D82632",
+         "grey"))
+names(keyvals)[keyvals == "navy"] <- "Downregulated"
+names(keyvals)[keyvals == "#D82632"] <- "Upregulated"
+names(keyvals)[keyvals == "grey"] <- "NS"
+
+# We selected the top 10 DEGs according to significance to be labeled in the volcano plot
+selected_labs <- c(slice_min(.data = DEGs, order_by = adj.P.Val, n = 10)$Gene.name)
+volcano_plot <- EnhancedVolcano(toptable = DEGs,lab = DEGs$Gene.name,
+                                selectLab = selected_labs,
+                                x = "logFC",y = "adj.P.Val",pCutoff = 0.05,FCcutoff = 1,
+                                ylim = , xlim = range(DEGs$logFC), 
+                                drawConnectors = TRUE,widthConnectors = 0.5,typeConnectors = ,
+                                endsConnectors = 'first',labSize = 4,gridlines.minor = F,gridlines.major = F
+                                ,pointSize = 3,colAlpha = 0.5, title = "Volcano plot",
+                                subtitle = "Adj p-value cutoff (dashed line): p<0.05
+  Log2 FC cutoff (dashed line): 1",colCustom = keyvals,
+                                labFace = "italic",boxedLabels = TRUE, max.overlaps = Inf)
+ggsave(path = "./results",filename = "Volcano_DEGs.png",
+       plot = volcano_plot,device = png,
+       width = 18, height = 12,dpi = 300)
+
+
+################################
+## Ingenuity Pathway Analysis ##
+################################
+
+# Read data from the excel obtain in IPA. Here we display the top lipid metabolism pathways
+can_path_kupff <- read_excel("./IPA/Canonical_Pathways_lipid.xlsx")
+# Rename first column
+colnames(can_path_kupff)[1] <- "Pathway"
+
+# Plot the first 14 pathways related to lipid metabolism
+can_path_kupff[1:14,] %>% arrange(desc(`-log(p-value)`)) %>% 
+  mutate(Pathway = factor(x = Pathway, levels = unique(Pathway))) %>% # Reorder factors (genes)
+  ggplot(aes(x = `-log(p-value)`, y = Pathway, size = Ratio, fill = `z-score`)) + # Create plot, choose fill = z-score to color the points later
+  geom_point(alpha = 0.8, shape = 21, color = "gray50") + # select alpha, shape and color of the points
+  scale_fill_gradient2(low = "navy", mid = "white", high = "orange", midpoint = 0,  name = "Activation\nz-score") + # color the points according to p-value
+  scale_size(range = c(1, 10), name="Ratio") + # size the points according to number of proteins
+  scale_y_discrete(limits = rev) + # Reorder labels in axis
+  theme_cowplot() + geom_vline(xintercept = -log10(0.05), linetype = "dashed") + #a dashed line at the p-value threshold is plotted
+  xlim(1, 7) +
+  ylab("Canonical Pathways") + labs(title = "Top Lipid Metabolism Pathways")
+
+# Save figure
+ggsave(filename = "./IPA/results/Canonical_lipid.png", width = 8, height = 9, dpi = 600, units = "in")  
+
