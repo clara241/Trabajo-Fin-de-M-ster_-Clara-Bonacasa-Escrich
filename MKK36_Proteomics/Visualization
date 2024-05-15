@@ -1,0 +1,223 @@
+##############
+## PEPTIDES ##
+##############
+
+# 0) Load all the required Libraries
+
+library(readxl)
+library(tidyverse)
+library(readxl)
+library(openxlsx)
+library(pheatmap)
+## 1) Import dataset
+
+Prot <- read_excel("./wo_outliers Phospho MKK3_6/KupfferCells_Proteome_PEPT_202310_filtered_wo_outliers.xlsx")
+
+
+## 2) Pre-filtering the dataset
+
+# Remove duplicated rows
+
+Prot <- Prot %>% distinct(protein, .keep_all = T)
+
+
+Prot_volcano <- Prot[,c(1,12:14)]
+
+
+Prot_volcano <- Prot_volcano[!is.na(Prot_volcano$Zq_Av_KOvsWT),]
+
+
+write_delim(x = Prot_volcano, file = "./wo_outliers Phospho MKK3_6/Prot_pep_Kupffer_KOvsWT.tsv", delim = "\t")
+
+##  Extract the Zq values from the tibble in a dataframe.
+
+Proteom_df <- as.data.frame(Prot[4:11])
+
+##  Name the rows of the dataframe with the names of the proteins.
+
+rownames(Proteom_df) <- Prot$protein
+
+# Remove row with NA
+
+Proteom_df <- Proteom_df[!is.na(Prot$protein), ]
+
+Prot <- Prot[!is.na(Prot$protein),]
+
+rownames(Proteom_df) <- Prot$protein
+
+# Dealing with missing data
+
+table(is.na(Proteom_df))
+
+# FALSE  TRUE 
+# 29852    28
+
+library(missMDA)
+
+nb = estim_ncpPCA(Proteom_df,ncp.max=5, scale = T)
+
+res.comp = imputePCA(Proteom_df,ncp=nb$ncp, scale = T)
+
+# New dataframe with imputed data
+
+Proteom_df_impute <- res.comp$completeObs
+
+head(Proteom_df)
+head(Proteom_df_impute)
+
+##  Transpose the dataframe so the genes are in the columns and the samples in rows
+
+Proteom_df_t <- t(Proteom_df_impute)
+dim(Proteom_df_t)
+
+##  We add a column specifying the groups to which each sample belongs
+
+Proteom_matrix_groups <- factor(c(paste(rep("WT",5)),paste(rep("KO",3))))
+
+Proteom_df_t <- cbind.data.frame(Proteom_df_t,"Groups"=Proteom_matrix_groups)
+
+## Lets check that the new dataframe has the format that we want
+
+dim(Proteom_df_t)
+
+Proteom_df_t$Groups
+row.names(Proteom_df_t)
+
+## 5) Lets do the PCA. For that we are going to use the FactoMineR and factoextra packages
+## (Great tutorials on how to use the here: http://www.sthda.com/english/wiki/factoextra-r-package-easy-multivariate-data-analyses-and-elegant-visualization)
+## http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/
+
+# Install
+# install.packages("FactoMineR")
+
+# Load
+library("FactoMineR")
+
+# install.packages("factoextra")
+library("factoextra")
+
+## Before doing the PCA, the variable "Groups" must be removed. We do it not selecting it in the PCA analysis
+
+res.pca <- PCA(X = Proteom_df_t[,-2989],scale.unit = T, graph = F)
+
+# Extract eigenvalues/variances
+get_eig(res.pca)
+
+# Visualize eigenvalues/variances
+fviz_screeplot(res.pca, addlabels = TRUE, ylim = c(0, 50))
+
+# Extract the results for variables
+var <- get_pca_var(res.pca)
+var
+
+# Coordinates of variables
+head(var$coord)
+
+# Contribution of variables
+head(var$contrib)
+
+
+# Contributions of variables to PC1
+fviz_contrib(res.pca, choice = "var", axes = 1, top = 10)
+# Contributions of variables to PC2
+fviz_contrib(res.pca, choice = "var", axes = 2, top = 10)
+
+
+## The graph that is interesting for us is the PCA_individuals
+
+# Extract the results for individuals
+ind <- get_pca_ind(res.pca)
+ind
+
+# Coordinates of individuals
+head(ind$coord)
+
+# Graph of individuals
+# 1. Use repel = TRUE to avoid overplotting
+# 2. Control automatically the color of individuals using the cos2
+# cos2 = the quality of the individuals on the factor map
+# Use points only
+# 3. Use gradient color
+
+library(cowplot)
+
+ggpubr::ggpar(fviz_pca_ind(X = res.pca,habillage = Proteom_df_t$Groups, palette = c("slateblue","firebrick"),pointsize=4,pointshape=,
+                           addEllipses = ,legend.title="Genotype",ellipse.type=,mean.point=F,repel = T,
+                           geom.ind = c("point","text"), title = "Principal Component Analysis", subtitle = "Kupffer Cells Proteome",
+                           xlab = "PC1", ylab = "PC2", ggtheme = theme_cowplot()))
+
+ggsave("./PCA.png", width = 8, height = 6, units = "in", dpi = 300)
+
+
+## We can do the PCA plot in 3 dimensions with pca3d
+
+library(pca3d)
+
+pca_proteomics <- prcomp(x = Proteom_df_t[,-2989],scale. = T)
+gr <- Proteom_df_t$Groups
+
+pca3d(pca = pca_proteomics,group = gr,radius = 5,legend = "topleft",
+      palette = c("slateblue","firebrick"),
+      title = "PCA Microglia Phosphopeptides",axes.color = "black", show.group.labels = F,
+      show.centroids = F,show.plane = F, show.labels = FALSE, labels.col = NULL,
+      bg = NULL)
+
+
+library(rgl)
+rgl.postscript("../results/PCA3d_Microglia_Proteome_Phospho.svg", fmt = "svg", drawText = T)
+
+rgl.snapshot(filename = "../results/PCA3d_Microglia_Proteome_Phospho.png", fmt = "png")
+
+##################
+## Volcano plot ##
+##################
+
+# Volcano data process previously
+DEGs <- read.table("./wo_outliers Phospho MKK3_6/Prot_pep_Kupffer_KOvsWT.tsv", sep = "\t")
+colnames(DEGs) <- DEGs[1,]
+DEGs <- DEGs[-1,]
+DEGs$Zq_Av_KOvsWT <- as.numeric(DEGs$Zq_Av_KOvsWT)
+DEGs$Zp_Limma_KOvsWT <- as.numeric(DEGs$Zp_Limma_KOvsWT)
+keyvals <- ifelse(
+  DEGs$Zq_Av_KOvsWT < -1 & DEGs$Zp_Limma_KOvsWT < 0.05, "navy",
+  ifelse(DEGs$Zq_Av_KOvsWT  > 1 & DEGs$Zp_Limma_KOvsWT < 0.05,"#D82632",
+         "grey"))
+names(keyvals)[keyvals == "navy"] <- "Downregulated"
+names(keyvals)[keyvals == "#D82632"] <- "Upregulated"
+names(keyvals)[keyvals == "grey"] <- "NS"
+#DEGs$gene <- rownames(DEGs)
+selected_labs <- c(slice_min(.data = DEGs, order_by = Zp_Limma_KOvsWT, n = 10)$gene)
+volcano_plot <- EnhancedVolcano(toptable = DEGs,lab = DEGs$gene,
+                                selectLab = selected_labs,
+                                x = "Zq_Av_KOvsWT",y = "Zp_Limma_KOvsWT",pCutoff = 0.05,FCcutoff = 1,
+                                ylim = , xlim = range(DEGs$Zq_Av_KOvsWT), 
+                                drawConnectors = TRUE,widthConnectors = 0.5,typeConnectors = ,
+                                endsConnectors = 'first',labSize = 4,gridlines.minor = F,gridlines.major = F
+                                ,pointSize = 3,colAlpha = 0.5, title = "Volcano plot",
+                                subtitle = "Adj p-value cutoff (dashed line): p<0.05
+  Log2 FC cutoff (dashed line): 1",colCustom = keyvals,
+                                labFace = "italic",boxedLabels = TRUE, max.overlaps = Inf)
+ggsave("./Volcano_DEGs.png",
+       plot = volcano_plot,device = png,
+       width = 12, height = 10,dpi = 300)
+
+#############
+## Heatmap ##
+#############
+
+Prot <- read.xlsx("./wo_outliers Phospho MKK3_6/KupfferCells_Proteome_PEPT_202310_filtered_wo_outliers.xlsx", sheet = "Hoja4")
+Proteom_df <- Prot[,4:11]
+rownames(Proteom_df) <- Prot$gene
+
+# We define the condition groups
+Condition_groups <- factor(c(paste(rep("WT",5)),paste(rep("KO",3))))
+Condition_groups <- as.data.frame(Condition_groups)
+rownames(Condition_groups) <- colnames(Proteom_df)
+
+my_colour = list(
+  Condition_groups = c(WT = "red", KO = "navyblue")
+)
+
+pheatmap(Proteom_df, annotation_col = Condition_groups,
+         annotation_colors = my_colour, color = colorRampPalette(c("navy", "white", "red"))(100),
+         scale = "row", cluster_rows = F, cluster_cols = F)
