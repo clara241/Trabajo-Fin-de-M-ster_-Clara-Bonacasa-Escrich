@@ -1,0 +1,1505 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Bulk RNA_HFD vs ND",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS2_S201_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS2_S201_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 10
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f50a29c8-9cd6-447b-b0fc-00e7990044f5",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS2_S201_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS2_S201_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 130
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "6cb69725-a6bd-45e3-a55c-e12c20eefd45",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS2_S201_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS2_S201_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 250
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4f4d65c8-4d94-43a9-b53f-93e6d68e231b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Mus_musculus.GRCm39.dna.primary_assembly.fa.gz"
+                }
+            ],
+            "label": "Mus_musculus.GRCm39.dna.primary_assembly.fa.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 370
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "3f00e57d-a473-4ce5-8c5c-65afcc7c5f80",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS3_S202_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS3_S202_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 490
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "9ac60b69-c25f-4c8b-8739-20a4fe8a3cba",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS3_S202_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS3_S202_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 610
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d57a463e-d659-4492-928c-96e73e19ec97",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS3_S202_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS3_S202_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 730
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "581e11ac-599c-44c2-aa3f-3b48da9053c3",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS4_S203_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS4_S203_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 850
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d17cfb36-2a12-444d-8835-0deac362a508",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS4_S203_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS4_S203_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 970
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "bf881487-b477-49f1-b7dc-a725d89e5479",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS4_S203_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS4_S203_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1090
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "eefe53b1-8996-46e1-ac51-ea6c440c1dfd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 10,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS624_S197_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS624_S197_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1210
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "c9914dee-23d8-42ca-a3bf-e06968e294e1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 11,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS624_S197_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS624_S197_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1330
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5d15e44c-9f8d-494a-96fc-8f9e6cea03bd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 12,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS624_S197_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS624_S197_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1450
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "52b492e8-b027-48d1-bf1c-233c318e1e24",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 13,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS625_S198_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS625_S198_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1570
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "625c1a1f-db26-4f55-815f-0f012686f58e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 14,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS625_S198_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS625_S198_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1690
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "83d81510-9493-49bd-addb-d8ad775ac7ca",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 15,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS625_S198_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS625_S198_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1810
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "b636a62c-5565-403b-9cd8-2124c82081fd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 16,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS638_S199_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS638_S199_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 1930
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "572ab121-3170-4c95-862b-19481a6bd9ad",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 17,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS638_S199_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS638_S199_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2050
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ef622f7d-3a86-40b2-adc9-94be5c6c007a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 18,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS638_S199_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS638_S199_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2170
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "49089126-9a7e-4351-9ffd-d860ca21885a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 19,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS639_S200_L006_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS639_S200_L006_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2290
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "90e1bcf3-1f9e-48f4-83b2-3d0a10fedec3",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "20": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 20,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS639_S200_L007_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS639_S200_L007_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2410
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "acd121aa-67b8-4901-8fa8-930f108b3d62",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "21": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 21,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "mer_FAS639_S200_L008_R1_001.fastq.gz"
+                }
+            ],
+            "label": "mer_FAS639_S200_L008_R1_001.fastq.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2530
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "86db2367-5158-48e2-858a-9d160f40549b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "22": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 22,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Mus_musculus.GRCm39.109.chr.gtf"
+                }
+            ],
+            "label": "Mus_musculus.GRCm39.109.chr.gtf",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2650
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "25ea8155-67c2-46b4-9909-70a7ed932ee4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "23": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 23,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "TranscripttoGeneID.tabular"
+                }
+            ],
+            "label": "TranscripttoGeneID.tabular",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2770
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "79fdd3e7-f6a1-4af7-b2a0-9daadf3c007a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "24": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 24,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Gene_names"
+                }
+            ],
+            "label": "Gene_names",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 2890
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "9f8f665f-1070-4eb8-b8ce-284528c21aa2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "25": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 25,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Input Dataset Collection"
+                }
+            ],
+            "label": "Input Dataset Collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 3010
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "bcaff91d-b6e0-4891-9789-0768cbe19a66",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "26": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 26,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Input Dataset Collection"
+                }
+            ],
+            "label": null,
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 3130
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "b7654f6d-2619-4de6-9384-e9eef64c43ac",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "27": {
+            "annotation": "",
+            "content_id": "Grep1",
+            "errors": null,
+            "id": 27,
+            "input_connections": {
+                "input": {
+                    "id": 22,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Select",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 490
+            },
+            "post_job_actions": {},
+            "tool_id": "Grep1",
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"input\": null, \"invert\": \"-v\", \"keep_header\": false, \"pattern\": \"(pseudogene|miRNA)\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.4",
+            "type": "tool",
+            "uuid": "34c7164b-e317-4fbc-a98e-4d86f03591dc",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "28": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 28,
+            "input_connections": {
+                "input_file": {
+                    "id": 25,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastqsanger.gz\", \"adapters\": null, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"contaminants\": null, \"input_file\": null, \"input_file|__identifier__\": \"FAS2.fastq\", \"kmers\": \"7\", \"limits\": null, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "b6c34ebc-e905-463c-a0b1-c6c4aa35f2da",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "29": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.7+galaxy0",
+            "errors": null,
+            "id": 29,
+            "input_connections": {
+                "singlePaired|input_singles": {
+                    "id": 25,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Trim Galore!",
+            "outputs": [
+                {
+                    "name": "trimmed_reads_single",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 370
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.7+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "cd7e644cae1d",
+                "name": "trim_galore",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"params\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"rrbs\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"singlePaired\": {\"sPaired\": \"single\", \"__current_case__\": 0, \"input_singles\": null, \"trimming\": {\"trimming_select\": \"\", \"__current_case__\": 0}, \"three_prime_clip_R1\": null}, \"singlePaired|input_singles|__identifier__\": \"FAS2.fastq\", \"trimming\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.6.7+galaxy0",
+            "type": "tool",
+            "uuid": "96130681-2133-4d8e-9004-ae1f72c882c6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "30": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 30,
+            "input_connections": {
+                "input_file": {
+                    "id": 26,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastqsanger.gz\", \"adapters\": null, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"contaminants\": null, \"input_file\": null, \"input_file|__identifier__\": \"FAS624.fastq\", \"kmers\": \"7\", \"limits\": null, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "16dc0a31-d536-415f-b205-cba26e66a1d7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "31": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.7+galaxy0",
+            "errors": null,
+            "id": 31,
+            "input_connections": {
+                "singlePaired|input_singles": {
+                    "id": 26,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Trim Galore!",
+            "outputs": [
+                {
+                    "name": "trimmed_reads_single",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 250
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.7+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "cd7e644cae1d",
+                "name": "trim_galore",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"params\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"rrbs\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"singlePaired\": {\"sPaired\": \"single\", \"__current_case__\": 0, \"input_singles\": null, \"trimming\": {\"trimming_select\": \"\", \"__current_case__\": 0}, \"three_prime_clip_R1\": null}, \"singlePaired|input_singles|__identifier__\": \"FAS624.fastq\", \"trimming\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.6.7+galaxy0",
+            "type": "tool",
+            "uuid": "350a9dcd-06f4-4905-8e5e-ba512cde9b6e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "32": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.4+galaxy0",
+            "errors": null,
+            "id": 32,
+            "input_connections": {
+                "input": {
+                    "id": 27,
+                    "output_name": "out_file1"
+                },
+                "reference_genome|genome_fasta": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "gffread",
+            "outputs": [
+                {
+                    "name": "output_gtf",
+                    "type": "gtf"
+                },
+                {
+                    "name": "output_exons",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 450,
+                "top": 250
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/gffread/gffread/2.2.1.4+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "3e436657dcd0",
+                "name": "gffread",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chr_replace\": null, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"decode_url\": false, \"expose\": false, \"filtering\": null, \"full_gff_attribute_preservation\": true, \"gffs\": {\"gff_fmt\": \"gtf\", \"__current_case__\": 2, \"tname\": \"filteredGTF\"}, \"input\": null, \"maxintron\": null, \"merging\": {\"merge_sel\": \"none\", \"__current_case__\": 0}, \"reference_genome\": {\"source\": \"history\", \"__current_case__\": 2, \"genome_fasta\": null, \"ref_filtering\": null, \"fa_outputs\": [\"-w exons.fa\"]}, \"region\": {\"region_filter\": \"none\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.1.4+galaxy0",
+            "type": "tool",
+            "uuid": "121384d9-4488-4088-aff5-678e2a8ddd8b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "33": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 33,
+            "input_connections": {
+                "input_file": {
+                    "id": 29,
+                    "output_name": "trimmed_reads_single"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 450,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastqsanger.gz\", \"adapters\": null, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"contaminants\": null, \"input_file\": null, \"input_file|__identifier__\": \"FAS2.fastq\", \"kmers\": \"7\", \"limits\": null, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "2e2395fa-2bd3-4a55-9dd3-b8c6c4381567",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "34": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "errors": null,
+            "id": 34,
+            "input_connections": {
+                "input_file": {
+                    "id": 31,
+                    "output_name": "trimmed_reads_single"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 450,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.74+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5ec9f6bceaee",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastqsanger.gz\", \"adapters\": null, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"contaminants\": null, \"input_file\": null, \"input_file|__identifier__\": \"FAS624.fastq\", \"kmers\": \"7\", \"limits\": null, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.74+galaxy0",
+            "type": "tool",
+            "uuid": "93c7b075-fc3d-4f55-9709-264fc2937f4b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "35": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/1.10.1+galaxy0",
+            "errors": null,
+            "id": 35,
+            "input_connections": {
+                "geneMap": {
+                    "id": 23,
+                    "output_name": "output"
+                },
+                "quant_type|input|single_or_paired|input_singles": {
+                    "id": 29,
+                    "output_name": "trimmed_reads_single"
+                },
+                "quant_type|refTranscriptSource|s_index|fasta": {
+                    "id": 32,
+                    "output_name": "output_exons"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Salmon quant",
+            "outputs": [
+                {
+                    "name": "output_quant",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 670,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/1.10.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "15cd64d7c58b",
+                "name": "salmon",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"skipQuant\": false, \"dumpEq\": false, \"dumpEqWeights\": false, \"minAssignedFrags\": null, \"biasSpeedSamp\": \"5\", \"fldMax\": \"1000\", \"fldMean\": \"250\", \"fldSD\": \"25\", \"forgettingFactor\": \"0.65\", \"initUniform\": false, \"maxReadOcc\": \"100\", \"noLengthCorrection\": false, \"noEffectiveLengthCorrection\": false, \"noFragLengthDist\": false, \"noBiasLengthThreshold\": false, \"numBiasSamples\": \"2000000\", \"numAuxModelSamples\": \"5000000\", \"numPreAuxModelSamples\": \"5000\", \"useEM\": false, \"rangeFactorizationBins\": \"0\", \"numGibbsSamples\": \"0\", \"noGammaDraw\": false, \"numBootstraps\": \"0\", \"bootstrapReproject\": false, \"thinningFactor\": \"16\", \"perTranscriptPrior\": false, \"sigDigits\": \"3\", \"vbPrior\": \"1e-05\", \"writeOrphanLinks\": false, \"writeUnmappedNames\": false}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"gcBias\": true, \"geneMap\": null, \"incompatPrior\": \"0.0\", \"meta\": false, \"quant_type\": {\"qtype\": \"reads\", \"__current_case__\": 0, \"refTranscriptSource\": {\"TranscriptSource\": \"history\", \"__current_case__\": 1, \"s_index\": {\"fasta\": null, \"genome\": null, \"kmer\": \"31\", \"phash\": false}}, \"input\": {\"single_or_paired\": {\"single_or_paired_opts\": \"single\", \"__current_case__\": 0, \"input_singles\": null, \"libtype\": {\"strandedness\": \"U\", \"__current_case__\": 1}}}, \"type\": \"quasi\", \"discardOrphansQuasi\": false, \"validmap\": {\"validateMappings\": false, \"__current_case__\": 1}, \"consensusSlack\": \"0\", \"dovetail\": false, \"recoverOrphans\": false, \"bam_options\": {\"writeMappings\": \"\", \"__current_case__\": 1}, \"consistentHits\": false, \"quasiCoverage\": null}, \"quant_type|input|single_or_paired|input_singles|__identifier__\": \"FAS2.fastq\", \"seqBias\": true, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.10.1+galaxy0",
+            "type": "tool",
+            "uuid": "a275431a-5ab4-4fac-bf16-c86f14832029",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "36": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/1.10.1+galaxy0",
+            "errors": null,
+            "id": 36,
+            "input_connections": {
+                "geneMap": {
+                    "id": 23,
+                    "output_name": "output"
+                },
+                "quant_type|input|single_or_paired|input_singles": {
+                    "id": 31,
+                    "output_name": "trimmed_reads_single"
+                },
+                "quant_type|refTranscriptSource|s_index|fasta": {
+                    "id": 32,
+                    "output_name": "output_exons"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Salmon quant",
+            "outputs": [
+                {
+                    "name": "output_quant",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 670,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/salmon/salmon/1.10.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "15cd64d7c58b",
+                "name": "salmon",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"skipQuant\": false, \"dumpEq\": false, \"dumpEqWeights\": false, \"minAssignedFrags\": null, \"biasSpeedSamp\": \"5\", \"fldMax\": \"1000\", \"fldMean\": \"250\", \"fldSD\": \"25\", \"forgettingFactor\": \"0.65\", \"initUniform\": false, \"maxReadOcc\": \"100\", \"noLengthCorrection\": false, \"noEffectiveLengthCorrection\": false, \"noFragLengthDist\": false, \"noBiasLengthThreshold\": false, \"numBiasSamples\": \"2000000\", \"numAuxModelSamples\": \"5000000\", \"numPreAuxModelSamples\": \"5000\", \"useEM\": false, \"rangeFactorizationBins\": \"0\", \"numGibbsSamples\": \"0\", \"noGammaDraw\": false, \"numBootstraps\": \"0\", \"bootstrapReproject\": false, \"thinningFactor\": \"16\", \"perTranscriptPrior\": false, \"sigDigits\": \"3\", \"vbPrior\": \"1e-05\", \"writeOrphanLinks\": false, \"writeUnmappedNames\": false}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"gcBias\": true, \"geneMap\": null, \"incompatPrior\": \"0.0\", \"meta\": false, \"quant_type\": {\"qtype\": \"reads\", \"__current_case__\": 0, \"refTranscriptSource\": {\"TranscriptSource\": \"history\", \"__current_case__\": 1, \"s_index\": {\"fasta\": null, \"genome\": null, \"kmer\": \"31\", \"phash\": false}}, \"input\": {\"single_or_paired\": {\"single_or_paired_opts\": \"single\", \"__current_case__\": 0, \"input_singles\": null, \"libtype\": {\"strandedness\": \"U\", \"__current_case__\": 1}}}, \"type\": \"quasi\", \"discardOrphansQuasi\": false, \"validmap\": {\"validateMappings\": false, \"__current_case__\": 1}, \"consensusSlack\": \"0\", \"dovetail\": false, \"recoverOrphans\": false, \"bam_options\": {\"writeMappings\": \"\", \"__current_case__\": 1}, \"consistentHits\": false, \"quasiCoverage\": null}, \"quant_type|input|single_or_paired|input_singles|__identifier__\": \"FAS624.fastq\", \"seqBias\": true, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.10.1+galaxy0",
+            "type": "tool",
+            "uuid": "3094ee75-635f-467f-8d88-1ed0f434e3c4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "37": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "errors": null,
+            "id": 37,
+            "input_connections": {
+                "input": {
+                    "id": 35,
+                    "output_name": "output_gene_quant"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 890,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"list\": [\"1\", \"5\"]}, \"delimiter\": \"\", \"input\": null, \"input|__identifier__\": \"FAS2.fastq\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "01a0445e-3d38-4721-a3e0-0e02316011f3",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "38": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "errors": null,
+            "id": 38,
+            "input_connections": {
+                "input": {
+                    "id": 36,
+                    "output_name": "output_gene_quant"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 890,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"list\": [\"1\", \"5\"]}, \"delimiter\": \"\", \"input\": null, \"input|__identifier__\": \"FAS624.fastq\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "e942dd45-9fa3-4676-8d25-2487daa370b9",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "39": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "errors": null,
+            "id": 39,
+            "input_connections": {
+                "input_tabular": [
+                    {
+                        "id": 37,
+                        "output_name": "output"
+                    },
+                    {
+                        "id": 38,
+                        "output_name": "output"
+                    }
+                ]
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Column join",
+            "outputs": [
+                {
+                    "name": "tabular_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1110,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/collection_column_join/collection_column_join/0.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "3ddd99c7efee",
+                "name": "collection_column_join",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"fill_char\": \".\", \"has_header\": \"1\", \"identifier_column\": \"1\", \"include_outputs\": null, \"input_tabular\": null, \"old_col_in_header\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.3",
+            "type": "tool",
+            "uuid": "e7f688fb-178b-433d-9e0d-8021101d415f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "40": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/limma_voom/limma_voom/3.58.1+galaxy0",
+            "errors": null,
+            "id": 40,
+            "input_connections": {
+                "anno|geneanno": {
+                    "id": 24,
+                    "output_name": "output"
+                },
+                "input|counts": {
+                    "id": 39,
+                    "output_name": "tabular_output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "limma",
+            "outputs": [
+                {
+                    "name": "outTables",
+                    "type": "input"
+                },
+                {
+                    "name": "outReport",
+                    "type": "html"
+                },
+                {
+                    "name": "outFilt",
+                    "type": "tabular"
+                },
+                {
+                    "name": "outNorm",
+                    "type": "tabular"
+                },
+                {
+                    "name": "rscript",
+                    "type": "txt"
+                },
+                {
+                    "name": "libinfo",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1330,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/limma_voom/limma_voom/3.58.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "119b069fc845",
+                "name": "limma_voom",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"lfc\": \"1.0\", \"pVal\": \"0.05\", \"pAdjust\": \"BH\", \"treat\": false, \"topgenes\": \"10\", \"normalisationOption\": \"TMM\", \"robOption\": true}, \"anno\": {\"annoOpt\": \"yes\", \"__current_case__\": 0, \"geneanno\": null}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"cont\": {\"cfile\": \"no\", \"__current_case__\": 1, \"rep_contrast\": [{\"__index__\": 0, \"contrast\": \"HFD-ND\"}]}, \"deMethod\": {\"de_select\": \"voom\", \"__current_case__\": 0, \"weightOption\": false}, \"f\": {\"filt\": {\"filt_select\": \"yes\", \"__current_case__\": 0, \"cformat\": {\"format_select\": \"cpm\", \"__current_case__\": 0, \"cpmReq\": \"1.0\", \"cpmSampleReq\": \"3\"}}}, \"input\": {\"format\": \"matrix\", \"__current_case__\": 1, \"counts\": null, \"fact\": {\"ffile\": \"no\", \"__current_case__\": 1, \"rep_factor\": [{\"__index__\": 0, \"factorName\": \"Genotype\", \"groupNames\": \"HFD,HFD,HFD,ND,ND,ND,ND\"}]}}, \"out\": {\"plots\": [\"i\", \"d\", \"c\", \"x\", \"b\", \"m\", \"h\", \"s\"], \"filtCounts\": true, \"normCounts\": true, \"libinfo\": true, \"rscript\": true, \"rdaOption\": true}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.58.1+galaxy0",
+            "type": "tool",
+            "uuid": "674f7966-3aad-4e6f-b910-e2b3955f25e1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "41": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 41,
+            "input_connections": {
+                "input": {
+                    "id": 40,
+                    "output_name": "outTables"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1550,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"cond\": \"c7<0.05 and (c3>1 or c3<-1)\", \"header_lines\": \"1\", \"input\": null, \"input|__identifier__\": \"limma-voom_HFD-ND\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "0131b052-ce4c-484d-81de-34f2caa12cb6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "42": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "errors": null,
+            "id": 42,
+            "input_connections": {
+                "input": {
+                    "id": 41,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1770,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"list\": [\"2\"]}, \"delimiter\": \"\", \"input\": null, \"input|__identifier__\": \"limma-voom_HFD-ND\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "ca7ff4d5-26db-4d40-b3fe-c0d37b1c628f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "43": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.4",
+            "errors": null,
+            "id": 43,
+            "input_connections": {
+                "infile": {
+                    "id": 42,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Replace",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1990,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.4",
+            "tool_shed_repository": {
+                "changeset_revision": "d698c222f354",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"find_and_replace\": [{\"__index__\": 0, \"find_pattern\": \"\\\\n\", \"replace_pattern\": \" \", \"is_regex\": true, \"global\": true, \"caseinsensitive\": false, \"wholewords\": false, \"skip_first_line\": false, \"searchwhere\": {\"searchwhere_select\": \"line\", \"__current_case__\": 0}}], \"infile\": null, \"infile|__identifier__\": \"limma-voom_HFD-ND\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.4",
+            "type": "tool",
+            "uuid": "4a9f069a-36c6-4704-a09a-afb7573c2b18",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "44": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/gprofiler_gost/gprofiler_gost/0.1.7+galaxy11",
+            "errors": null,
+            "id": 44,
+            "input_connections": {
+                "input": {
+                    "id": 43,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "gProfiler GOSt",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "plot",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 2210,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/gprofiler_gost/gprofiler_gost/0.1.7+galaxy11",
+            "tool_shed_repository": {
+                "changeset_revision": "bf39cdd007f5",
+                "name": "gprofiler_gost",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"tabular\", \"advanced_options\": {\"significant\": true, \"measure_underrepresentation\": false, \"evcodes\": false, \"user_threshold\": \"0.05\", \"correction_method\": \"gSCS\", \"domain_scope\": \"annotated\", \"custom_bg\": null, \"numeric_ns\": \"\"}, \"chromInfo\": \"/cvmfs/data.galaxyproject.org/managed/len/ucsc/?.len\", \"data_sources\": {\"go_sources\": [\"GO:BP\", \"GO:MF\", \"GO:CC\"], \"exclude_iea\": false, \"bp_sources\": [\"KEGG\", \"REAC\", \"WP\"], \"reg_sources\": [\"TF\", \"MIRNA\"], \"proto_sources\": [\"HPA\", \"CORUM\"], \"hp_sources\": \"HP\"}, \"input\": null, \"input|__identifier__\": \"limma-voom_HFD-ND\", \"ordered_query\": false, \"organism\": {\"select_input_type\": \"select\", \"__current_case__\": 0, \"organism\": \"mmusculus\"}, \"tool_settings\": {\"base_url\": \"http://biit.cs.ut.ee/gprofiler\", \"export_plot\": true}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.7+galaxy11",
+            "type": "tool",
+            "uuid": "ca01f3ff-41c7-46d8-b2f5-af0315c5bbe1",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "09a37750-e755-43eb-83ba-57b59f6756ce",
+    "version": 0
+}
